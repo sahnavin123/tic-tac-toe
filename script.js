@@ -4,6 +4,7 @@ const boxes = document.getElementsByClassName("box");
 const resetBtn = document.getElementById("reset");
 const boxText = document.getElementsByClassName("text");
 let player = "Player 1";
+let isDraw = false;
 
 const changeTurn = () => {
   return turn === "X" ? "0" : "X";
@@ -40,7 +41,7 @@ const checkWin = () => {
 };
 
 const checkDraw = () => {
-  let isDraw = Array.from(boxText).every((element) => element.innerText !== "");
+  isDraw = Array.from(boxText).every((element) => element.innerText !== "");
 
   isDraw
     ? ((document.querySelector(".info").innerText =
@@ -57,9 +58,9 @@ Array.from(boxes).forEach((element) => {
       turn = changeTurn();
       player = changePlayer();
       checkWin();
-      checkDraw();
+      !isGameOver ? checkDraw() : null;
 
-      !isGameOver
+      !isGameOver && !isDraw
         ? (document.getElementsByClassName("info")[0].innerText =
             "Turn for " + player)
         : null;
