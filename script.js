@@ -51,7 +51,7 @@ const checkDraw = () => {
 };
 
 Array.from(boxes).forEach((element) => {
-  let boxTextElement = element.querySelector(".box > .text");
+  const boxTextElement = element.querySelector(".box > .text");
   element.addEventListener("click", (e) => {
     if (boxTextElement.innerText === "" && !isGameOver) {
       boxTextElement.innerText = turn;
@@ -69,7 +69,7 @@ Array.from(boxes).forEach((element) => {
 });
 
 resetBtn.addEventListener("click", () => {
-  let boxTexts = document.querySelectorAll(".box > .text");
+  const boxTexts = document.querySelectorAll(".box > .text");
   Array.from(boxTexts).forEach((element) => {
     element.innerText = "";
   });
