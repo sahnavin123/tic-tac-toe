@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+  background-color: gray;
+  color: white;
+  height: 65px;
+  font-size: 27px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+main .game-container {
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 10vw);
+}
+
+main .game-container .box {
+  border: 2px solid black;
+  font-size: 7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container .box:nth-child(1),
+.game-container .box:nth-child(2),
+.game-container .box:nth-child(3) {
+  border-top: 0;
+}
+
+.game-container .box:nth-child(1),
+.game-container .box:nth-child(4),
+.game-container .box:nth-child(7) {
+  border-left: 0;
+}
+
+.game-container .box:nth-child(3),
+.game-container .box:nth-child(6),
+.game-container .box:nth-child(9) {
+  border-right: 0;
+}
+
+.game-container .box:nth-child(7),
+.game-container .box:nth-child(8),
+.game-container .box:nth-child(9) {
+  border-bottom: 0;
+}
+
+main .game-info {
+  padding: 0 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.game-info .attributes p {
+  margin-bottom: 4rem;
+  font-size: 2rem;
+}
+
+.game-info .attributes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-info .attributes #reset {
+  margin: 0 22px;
+  padding: 1rem 2rem;
+  background-color: rgb(137, 195, 246);
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.game-info .attributes #reset:hover {
+  background-color: rgb(63, 159, 243);
+}
