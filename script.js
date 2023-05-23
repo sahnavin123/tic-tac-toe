@@ -32,6 +32,7 @@ const checkWin = () => {
       boxText[e[0]].innerText === boxText[e[2]].innerText &&
       boxText[e[0]].innerText !== ""
     ) {
+      // Update the player variable based on the winning symbol.
       boxText[e[0]].innerText === "X"
         ? (player = "Player 1")
         : (player = "Player 2");
